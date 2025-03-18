@@ -1,0 +1,569 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', Arial, sans-serif; /* 📌 Google Fonts 作为默认字体 */
+    font-weight: 300; /* 📌 细字体 */
+    scroll-behavior: smooth;
+}
+
+body {
+    /* background-image: url('image.png'); */
+    background-color: #191919;
+    color: #e6e6e6;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+h1 {
+    font-size: 4rem;
+    z-index: 1;
+}
+h2 {
+    font-size: 2rem;
+    z-index: 1;
+}
+h3 {
+    font-size: 2rem;
+    z-index: 1;
+}
+p {
+    z-index: 1;
+}
+ul {
+    margin-left: 4rem;
+    z-index: 1;
+}
+
+
+/* 上方 4×3 方框部分，占满整个视口 */
+#wrapper {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100vh;
+    width: 100%;
+    color: white;
+    text-align: left;
+    opacity: 0;  /* 初始透明度 */
+    transform: translateY(30px); /* 初始向下偏移 */
+    animation: fadeInWrapper 1s ease-out forwards; /* 1秒淡入动画 */
+    padding-left: 10vw; /* 让文本不会紧贴左边 */
+}
+
+/* 限制文本宽度 */
+#wrapper h1, 
+#wrapper h2 {
+    max-width: 40vw; /* 📌 限制最大宽度 */
+    word-wrap: break-word; /* 📌 允许长单词换行 */
+}
+
+
+/* 🌟 定义淡入动画 */
+@keyframes fadeInWrapper {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* 4×3 方框布局 */
+#container {
+    display: grid;
+    grid-template-columns: repeat(3, 300px);  /* 3 列，每列 300px */
+    grid-template-rows: repeat(2, 300px);  /* 2 行，每行 300px */
+    gap: 15px;
+    padding: 20px;
+    border: 2px solid #333;
+    border-radius: 2rem;
+}
+
+.box {
+    width: 300px;
+    height: 300px;
+    background-color: lightblue;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid #000;
+    border-radius: 10px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+/* 右侧文本 */
+#text {
+    margin-left: 30px;
+    padding: 20px;
+    font-size: 20px;
+    color: white;
+    min-width: 200px;
+    max-width: 90%;
+}
+
+
+/* 下方 数据可视化部分 */
+.chart-section {
+    display: flex;
+    flex-direction: row; /* 📌 让子元素水平排列 */
+    justify-content: flex-start; /* 📌 让 Sankey Chart 靠左 */
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+    background-color: #121212;
+    padding-left: 5vw; /* 📌 让图表稍微离开左侧 */
+    position: relative;
+}
+
+/* 交互控件 */
+/* 滑动条 - 右上角 */
+/* 🌟 控制控件位置 */
+#controls {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    background-color: rgba(36, 36, 36, 0.6);
+    padding: 8px 15px;
+    border-radius: 10px;
+    z-index: 10;
+}
+
+/* 滑动条样式 */
+#yearRange {
+    appearance: none;
+    width: 100%;
+    height: 5px;
+    background:#ffffff;
+    border-radius: 5px;
+    outline: none;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+/* 滑动条按钮 */
+#yearRange::-webkit-slider-thumb {
+    appearance: none;
+    width: 16px;
+    height: 16px;
+    background: white;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0px 0px 5px rgba(255, 255, 255, 0.5);
+    transition: 0.3s;
+}
+
+#yearRange::-webkit-slider-thumb:hover {
+    background: #ddd;
+    transform: scale(1.2);
+}
+
+/* 年份文本 */
+#yearLabel {
+    font-size: 18px;
+    color: white;
+    font-weight: bold;
+}
+
+#chart-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 80vh;
+    width: 100%;
+}
+
+/* 🌟 让 Sankey Chart 靠左 */
+#sankeyChart {
+    width: 75vw; /* 📌 限制最大宽度，防止图表过大 */
+    height: 80vh;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+#yearLabel {
+    font-size: 18px;
+    color: white;
+}
+
+#filter {
+    width: 100%;
+    padding: 5px;
+    margin: 10px 0;
+    border-radius: 2rem;
+}
+
+#info {
+    margin-top: 10px;
+    font-size: 14px;
+    color: #ffffff;
+}
+
+#actionButton {
+    padding: 12px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: 0.3s;
+    border-radius: 2rem;
+}
+
+#actionButton:hover {
+    background-color: #0056b3;
+}
+
+
+#citation {
+    height: 100vh;
+    width: 100vw;
+    background-color: #191919;
+    color: #e6e6e6;
+    text-align: center;
+    align-content: center;
+}
+
+#introduction {
+    height: 100vh;
+    width: 100vw;
+}
+
+#recyclingRate {
+    font-size: 3rem;
+}
+
+/* 视频 */
+#bgVideo {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1; /* 让视频处于背景 */
+}
+
+#videoOverlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4); /* 半透明黑色 */
+    backdrop-filter: blur(10px); /* 🌟 添加模糊效果 */
+    -webkit-backdrop-filter: blur(10px); /* 兼容 Safari */
+    z-index: 0;
+    transition: 0.3s ease-in-out;
+}
+
+
+#trendAnalysis {
+    margin-top: 15px;
+    padding: 10px;
+    background-color: rgba(255, 255, 255, 0.1); /* 半透明背景 */
+    border-radius: 8px;
+    text-align: left;
+    font-size: 14px;
+    color: #fff;
+    max-width: 250px; /* 限制宽度，强制换行 */
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
+#yearlyData {
+    margin-top: 15px;
+    padding: 10px;
+    background-color: rgba(255, 255, 255, 0.1); /* 半透明背景 */
+    border-radius: 8px;
+    text-align: left;
+    font-size: 14px;
+    color: #fff;
+    max-width: 250px; /* 限制宽度，强制换行 */
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
+
+#trendAnalysis h4 {
+    font-size: 16px;
+    margin-bottom: 5px;
+    color: #fff;
+}
+
+#trendText {
+    font-size: 14px;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    line-height: 1.5; /* 增加行高，增强可读性 */
+    white-space: normal; /* 允许自动换行 */
+}
+
+#filterSection {
+    margin-top: 15px;
+    padding: 10px;
+    background-color: rgba(255, 255, 255, 0.1); /* 半透明背景 */
+    border-radius: 8px;
+    text-align: left;
+    font-size: 14px;
+    color: #fff;
+    max-width: 250px; /* 限制宽度 */
+}
+
+#educationFilter,
+#wasteFilter {
+    width: 100%;
+    padding: 5px;
+    margin-top: 5px;
+    font-size: 14px;
+    border-radius: 5px;
+    background-color: #222;
+    color: white;
+    border: 1px solid #555;
+}
+
+#introduction {
+    height: 100vh;
+    width: 100vw;
+    background-color: #282828;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center /* 📌 让内容靠右对齐 */
+}
+
+/* 限制文本宽度 */
+#introduction h1, 
+#introduction h2, 
+#introduction p {
+    max-width: 40vw; /* 📌 限制文本宽度为 40% 视口宽度 */
+    word-wrap: break-word; /* 📌 允许长单词换行 */
+}
+
+
+#introduction h1 {
+    font-weight: bold;
+    color: #f2f2f2;
+    margin-bottom: 20px;
+}
+
+#introduction h2 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #cccccc;
+    margin-bottom: 15px;
+}
+
+#introduction p {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    max-width: 800px;
+    color: #b3b3b3;
+    font-weight: 300;
+}
+
+#citation {
+    width: 100vw;
+    min-height: 100vh;
+    background-color: #191919;
+    color: #e6e6e6;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start; /* 让内容靠左 */
+    padding: 60px 10vw; /* 增加左右留白 */
+}
+
+#citation {
+    width: 100vw;
+    min-height: 100vh;
+    background-color: #191919;
+    color: #e6e6e6;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start; /* 📌 让所有内容靠左对齐 */
+    padding-left: 10vw; /* 📌 增加左侧间距，避免贴边 */
+    padding-right: 10vw; /* 让右侧也有适当间距 */
+    padding-top: 60px;
+    padding-bottom: 60px;
+    text-align: left; /* 📌 确保文本内容也是左对齐 */
+}
+
+/* 🌟 让标题也靠左 */
+#citation h2 {
+    font-size: 2.2rem;
+    font-weight: bold;
+    color: #f2f2f2;
+    margin-bottom: 30px;
+}
+
+/* 🌟 让每个部分的标题和内容靠左 */
+.citation-section {
+    width: 100%; /* 让它占满整个父容器 */
+    margin-bottom: 20px;
+}
+
+/* 🌟 让小标题靠左 */
+.citation-section h3 {
+    font-size: 1.5rem;
+    color: #dcdcdc;
+    margin-bottom: 10px;
+}
+
+/* 🌟 让段落靠左，并增加最大宽度 */
+#citation p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    max-width: 800px;
+    color: #d0d0d0;
+    margin-bottom: 10px;
+}
+
+/* 🌟 超链接样式 */
+#citation a {
+    color: #1e90ff;
+    text-decoration: none;
+    transition: color 0.3s ease-in-out;
+}
+
+#citation a:hover {
+    color: #ffffff;
+}
+
+/* 🌟 让列表也靠左 */
+#citation ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+#citation li {
+    font-size: 1.1rem;
+    color: #d0d0d0;
+    margin-bottom: 5px;
+}
+
+.download-btn {
+    padding: 10px 20px;
+    background-color: #155eb2;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+.download-btn:hover {
+    background-color: #1034a0;
+}
+
+/* 介绍部分的布局 */
+.introduction {
+    display: flex;
+    gap: 3rem;
+    align-items: center;
+    margin: 2rem 0; /* 移除左右边距 */
+    padding: 0 8%; /* 添加整体内边距 */
+    width: 100%;
+    height: 100vh;
+    min-height: 60vh;
+}
+
+
+/* 图片样式 */
+.intro-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    border-radius: 1rem;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+/* 文字部分样式 */
+.intro-text {
+    width: 80%;  /* 从之前的值改为更大的比例 */
+    max-width: 800px;  /* 可以适当增加最大宽度 */
+    margin: 0;
+    padding-left: 0;
+    text-align: left;
+    align-items: center;
+}
+
+#videoContainer {
+    flex: 0 0 60%; /* 占据 40% 的宽度 */
+    aspect-ratio: 2/1; /* 确保视频比例适当 */
+    margin: 20;
+    gap: 20px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.intro-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* 确保视频填充整个容器 */
+    display: block;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+#circleContainer {
+    display: flex;
+    justify-content: center; /* 居中排列 */
+    gap: 12px; /* 圆之间的间距 */
+    margin-top: 10px; /* 与其他控件的间距 */
+    margin-top: 15px;
+    padding: 10px;
+    background-color: rgba(255, 255, 255, 0.1); /* 半透明背景 */
+    border-radius: 8px;
+    text-align: left;
+    font-size: 14px;
+    color: #fff;
+    max-width: 250px; /* 限制宽度，强制换行 */
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
+
+#circle1 {
+    width: 20px; /* 圆的大小 */
+    height: 20px;
+    background-color: rgba(128, 0, 128, 0.252); /* 设定紫色 */
+    border-radius: 50%; /* 变成圆形 */
+}
+#circle2 {
+    width: 20px; /* 圆的大小 */
+    height: 20px;
+    background-color: rgba(128, 0, 128, 0.395); /* 设定紫色 */
+    border-radius: 50%; /* 变成圆形 */
+}
+#circle3 {
+    width: 20px; /* 圆的大小 */
+    height: 20px;
+    background-color: rgba(128, 0, 128, 0.536); /* 设定紫色 */
+    border-radius: 50%; /* 变成圆形 */
+}
+#circle4 {
+    width: 20px; /* 圆的大小 */
+    height: 20px;
+    background-color: rgba(128, 0, 128, 0.722); /* 设定紫色 */
+    border-radius: 50%; /* 变成圆形 */
+}
+#circle5 {
+    width: 20px; /* 圆的大小 */
+    height: 20px;
+    background-color: rgba(151, 13, 151, 0.774); /* 设定紫色 */
+    border-radius: 50%; /* 变成圆形 */
+}
+#circle6 {
+    width: 20px; /* 圆的大小 */
+    height: 20px;
+    background-color: rgb(215, 11, 215); /* 设定紫色 */
+    border-radius: 50%; /* 变成圆形 */
+}

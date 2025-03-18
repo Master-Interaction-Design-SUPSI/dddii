@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>District Demographics Visualization</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script src="https://pixijs.download/v7.3.2/pixi.min.js"></script>
+    <script type="module" src="script.js" defer ></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <h1>Exploring the Impact of Population Age and Waste Production on Recycling Efficiency in Lausanne's Districts</h1>
+        <div id="legend"></div>       
+    </header>
+
+    <div id="info">
+        <div class="controls">
+            <p>Recyclable waste</p>
+            <label class="switch">
+                <input type="checkbox" id="waste-toggle">
+                <span class="slider round"></span>
+            </label>
+            <!-- <span id="waste-type-label"></span> -->
+            <p>Incinerable waste</p>
+        </div>
+        <img src="assets/legend.svg" alt="Legend" id="legend-svg" style="max-width: 30%; height: auto;">
+    </div>
+
+    <main>
+        <div id="visualization" class="container"></div>
+        <div id="visualization-non" class="hidden"></div>
+        <div id="sidebar" class="container" style="overflow-y: auto">
+            <h2>District Information</h2>
+            <p>Click on a district to see the dots reorganize by age distribution of the population.</p>
+            <p>Toggle the switch to compare district sizes based on recyclable vs. non-recyclable waste.</p>
+            <p>Each dot represents one person living in the district</p>
+            <div id="district-details"></div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-column">
+                <h3>Sources</h3>
+                <p>Population Data<br>
+                    <a href="https://www.lausanne.ch/officiel/statistique/quartiers/tableaux-donnees.html" target="_blank">City of Lausanne, Statistical Office</a>
+                </p>
+                <p>Waste Data<br>
+                    Bluecity project (2022 - 2026).
+                </p>
+            </div>
+
+            <div class="footer-column">
+                <h3>Course</h3>
+                <p>Data Driven Design II</p>
+                <h3>Year</h3>
+                <p>2024-2025</p>
+            </div>
+
+            <div class="footer-column">
+                <h3>Authors</h3>
+                <p>Tehreem Raheel, Lara Rodrigues Ristic, Nicolò Beghetto, Dajana Seefluth</p>
+            </div>
+
+            <div class="footer-column">
+                <h3>Faculty</h3>
+                <p>Ginevra Terenghi, Teacher<br>
+                   Antonella Autuori, Teacher<br>
+                   Luca Draisci, Teaching Assistant</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

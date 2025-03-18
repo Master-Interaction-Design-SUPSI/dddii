@@ -1,0 +1,221 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    background-color: black;
+}
+
+#header {
+    position: absolute;
+    top: 10px;
+    left: 20px;
+    color: rgba(255, 255, 255, 0.8);
+    font-family: "dico-code-one", mono;
+    font-style: normal;
+    font-weight: 100;
+    z-index: 10000;
+    text-align: left; /* Aligns text to the left */
+}
+
+#header h1 {
+    margin: 25px 0 0 20px; /* Adjusted margin to keep it aligned */
+    font-size: 22px;
+}
+
+#header p {
+    margin: 20px 0 0 20px; /* Adjusted margin to keep it aligned */
+    font-size: 13px;
+    max-width: 415px;
+}
+
+.side-panel {
+    position: fixed; /* Mantiene il pannello fisso mentre si scorre la pagina */
+    bottom: 40px;
+    right: 35px; /* Lo mantiene a 20px dal lato sinistro */
+    width: 350px;
+    background: rgba(82, 82, 82, 0.2);
+    color: rgba(255, 255, 255, 0.8);
+    font-family: "dico-code-one", mono;
+    padding: 15px; 
+    border-radius: 10px;
+    overflow-y: auto;
+    max-height: 80vh;
+    z-index: 9999;
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1); /* Transizione fluida su tutte le proprietà */
+}
+
+.side-panel h2 {
+    font-size: 22px;
+    margin-bottom: 10px;
+}
+
+.side-panel p {
+    font-size: 13px;
+    line-height: 1.5;
+}
+
+
+#svg_bubble img {
+    position: absolute ;
+    right: 15px;
+    top : 350px
+
+}
+
+
+#map {
+    width: 100%;
+    height: 100vh;
+}
+
+#monthNavigation {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(255, 255, 255, 0);
+    padding: 10px 20px;
+    border-radius: 10px;
+    color: rgba(255, 255, 255, 0.8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+}
+
+#monthNavigation button {
+    background: none;
+    border: none;
+    font-size: 14px;
+    cursor: pointer;
+    padding: 5px 10px;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+#monthNavigation button:hover {
+    color: rgba(255, 255, 255, 1);
+}
+
+#monthLabel {
+    font-family: "dico-code-one", mono;
+    font-style: normal;
+    font-weight: 100;
+    margin: 0 15px;
+    font-size: 13px;
+    text-transform: uppercase;
+    
+}
+
+#districtName {
+    position: absolute;
+    bottom: 35px;
+    left: 24px;
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 13px;
+    z-index: 9999;
+    font-family: "dico-code-one", mono;
+    font-style: normal;
+    font-weight: 100;
+}
+
+/* Button for toggling description */
+#toggleDescriptionBtn {
+    position: absolute;
+    margin: 15px 15px 0;
+    background: none;
+    border: none;
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.8);
+    cursor: pointer;
+    transform: rotate(90deg);
+}
+
+#toggleDescriptionBtn:hover {
+    color: rgba(255, 255, 255, 1);
+}
+
+#imageContainer {
+    position: fixed;
+    top: 100px; 
+    right: 20px;
+    display: flex;
+    flex-direction: column; /* Imposta la direzione verticale */
+    gap: 10px; /* Aggiunge uno spazio tra gli elementi */
+    z-index: 9999;
+}
+
+.imageWithText {
+    display: flex;
+    align-items: center;
+    flex-direction: row-reverse; /* Mantiene l'ordine immagine-testo */
+}
+
+/* Styling for the images */
+#image1 {
+    width: 25px;
+    height: 25px;
+    margin-left: 10px;
+    margin-right: 13px; /* Margine destro personalizzato */
+    object-fit: contain;
+}
+
+#image2 {
+    width: 25px;
+    height: 25px;
+    margin-left: 10px;
+    margin-right: 15px; /* Margine destro personalizzato */
+    object-fit: contain;
+}
+
+/* Styling for the text */
+#text1, #text2 {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 13px;
+    font-family: "dico-code-one", mono;
+    font-weight: 100;
+}
+
+#image3 {
+    width: 15px;
+    height: 15px;
+    margin-left: 10px;
+    margin-right: 15px;
+    object-fit: contain;
+}
+
+#text3 {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 13px;
+    font-family: "dico-code-one", mono;
+    font-weight: 100;
+}
+
+
+/* Imposta ellipse al 50% in più rispetto a image2 (25px -> circa 38px) */
+#ellipse {
+    width: 38px;
+    height: 38px;
+    margin-left: 10px;
+    margin-right: 15px;
+    object-fit: contain;
+}
+
+#aboutButton {
+    position: fixed;
+    top: 40px; 
+    right: 32px;
+    background: rgba(79, 79, 79, 0.4);
+    color: rgba(255, 255, 255);
+    font-size: 13px;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    font-family: "dico-code-one", mono;
+    font-weight: 100;
+}
+
+#aboutButton:hover {
+    background: rgba(79, 79, 79, 0.6);  
+    color: rgba(255, 255, 255, 1);
+}

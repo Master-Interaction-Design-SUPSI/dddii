@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The route of glass</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://use.typekit.net/ykw3pod.css">
+    <script src="./bubbleChartData.js"></script>
+    <script type="module" src="script.js" defer></script>
+    <script type="module" src="animation.js" defer></script>
+    <script type="module" src="toggle_analysis.js" defer></script>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+</head>
+<body>
+    <div id="header">
+    <button id="aboutButton">About</button> <!-- New About Button -->
+    <h1>The route of glass [2023]</h1>
+    <p id="descriptionText">This interactive data visualization provides insight into Lausanne's glass recycling system throughout 2023. The interface allows to explore the monthly collection routes of waste collection vehicles, tracking their movements across the city’s districts. As users scroll month by month, the corresponding routes appear on the map, visually representing the paths taken by the vehicles and relating them to waste production.<br><br>For a more detailed view, you can click on individual districts to access daily data for that specific area. This feature allows you to analyze daily waste collection trends, providing a granular understanding of recycling efforts across Lausanne.</p>
+    <button id="toggleDescriptionBtn">◀</button> <!-- New Button -->
+</div>
+    <div class="side-panel">
+        <div id="feature-info"></div>
+    </div>
+    
+    <div id="map"></div>
+    
+    <div id="monthNavigation">
+        <button id="prevMonth">◀</button>
+        <span id="monthLabel">January</span>
+        <button id="nextMonth">▶</button>
+    </div>
+
+    <div id="districtName"></div>
+
+    <div id="imageContainer">
+    <div class="imageWithText">
+      <img src="legend/prototype_ui.png" id="image1" alt="Lausanne districts">
+      <span id="text1">Lausanne districts</span>
+    </div>
+    <div class="imageWithText" id="secondIconContainer">
+      <img src="legend/prototype_ui1.png" id="image2" alt="Vehicles routes">
+      <span id="text2">vehicles routes</span>
+    </div>
+    <!-- Nuovo blocco per "ecopoints" -->
+    <div class="imageWithText" id="thirdIconContainer">
+      <img src="legend/ellipse.png" id="image3" alt="Ecopoints">
+      <span id="text3">ecopoints</span>
+    </div>
+  </div>
+
+
+</body>
+</html>
+
+
+

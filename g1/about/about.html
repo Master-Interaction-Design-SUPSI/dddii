@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The route of glass</title>
+    <link rel="stylesheet" href="about.css">
+    <link rel="stylesheet" href="https://use.typekit.net/ykw3pod.css">
+</head>
+<body>
+    <button class="back-button" id="backButton">Back</button>
+
+    <div class="content">
+        <div class="text-section">
+            <p class="description">
+                The data visualization explores the glass collection routes in Lausanne throughout 2023, using datasets provided by BlueCity, an Innosuisse Flagship Project led by Professor Jeffrey Huang of the Media and Design Laboratory (LDM).
+                <br><br>
+                Our process began with the translation of DXF files—representing the glass collection routes—into monthly JSON files. To ensure accuracy, we cross-referenced these JSON files with CSV datasets containing the GPS coordinates of the collection routes, verifying their alignment.
+                <br><br>
+                Next, we incorporated CSV data on the monthly quantities of collected glass waste, allowing us to compare the routes with the total amount of glass collected across the city. We then refined our analysis at the district level, comparing the quantity of glass collected in each district per month with the number of ecopoints (recycling stations) available in each area.
+                <br><br>
+                This process enabled a deeper understanding of glass waste collection patterns in Lausanne, highlighting potential inefficiencies and trends in urban recycling logistics.
+            
+            </p>
+            <div class="credits">
+                <h2>CREDITS</h2>
+                <h3>CREDITS</h3>
+                <p class="credits-text">
+                    Datasets: Bluecity project (2022 - 2026) <br><br>
+                    Authors:  Julie Agustoni, Valentina Guariglia, Francesco Salvatore, Luca Spallino <br><br>
+                    Course:   Data Driven Design II (2024-2025) <br><br>
+                    Faculty:  Ginevra Terenghi, Antonella Autuori, Luca Draisci (TA)
+                </p>
+            </div>
+        </div>
+
+        <div class="map-container">
+            <img src="sfondo.png" alt="Glass Collection Map" class="map">
+        </div>
+    </div>
+
+    <script>
+        // Funzione per tornare alla pagina principale
+        document.getElementById("backButton").addEventListener("click", function() {
+            window.location.href = "../index.html"; // Assumendo che about.html sia in una sottocartella
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,269 @@
+Hautes Ecoles (2017),15-24 y.o. (2017),1932
+Hautes Ecoles (2017),25-44 y.o. (2017),25353
+Hautes Ecoles (2017),45-64 y.o. (2017),8879
+Hautes Ecoles (2017),more than 64 y.o. (2017),2671
+Professionnelle Supérieure (2017),15-24 y.o. (2017),387
+Professionnelle Supérieure (2017),25-44 y.o. (2017),3846
+Professionnelle Supérieure (2017),45-64 y.o. (2017),3465
+Professionnelle Supérieure (2017),more than 64 y.o. (2017),2137
+Formation Générale (2017),15-24 y.o. (2017),3490
+Formation Générale (2017),25-44 y.o. (2017),4539
+Formation Générale (2017),45-64 y.o. (2017),3077
+Formation Générale (2017),more than 64 y.o. (2017),1912
+Formation Professionnelle (2017),15-24 y.o. (2017),1869
+Formation Professionnelle (2017),25-44 y.o. (2017),7062
+Formation Professionnelle (2017),45-64 y.o. (2017),6522
+Formation Professionnelle (2017),more than 64 y.o. (2017),5400
+Sans formation postobligatoire (2017),under 15 (2017),20249
+Sans formation postobligatoire (2017),15-24 y.o. (2017),7410
+Sans formation postobligatoire (2017),25-44 y.o. (2017),8354
+Sans formation postobligatoire (2017),45-64 y.o. (2017),9726
+Sans formation postobligatoire (2017),more than 64 y.o. (2017),7239
+Unknown (2017),15-24 y.o. (2017),3531
+Unknown (2017),25-44 y.o. (2017),3320
+Unknown (2017),45-64 y.o. (2017),1034
+Unknown (2017),more than 64 y.o. (2017),1385
+under 15 (2017),Overall Population (2017),20249
+15-24 y.o. (2017),Overall Population (2017),18618
+25-44 y.o. (2017),Overall Population (2017),52475
+45-64 y.o. (2017),Overall Population (2017),32703
+more than 64 y.o. (2017),Overall Population (2017),20745
+Overall Population (2017),Total Waste (2017),69634
+Total Waste (2017),Incinerable (2017),35054
+Total Waste (2017),Paper (2017),15202
+Total Waste (2017),Glass (2017),7590
+Total Waste (2017),Iron (2017),2264
+Total Waste (2017),Vegetabe (2017),9523
+
+
+
+const sankeyData = {
+    "2017": [
+        ["Hautes Ecoles", "15-24 y.o.", 1932],
+        ["Hautes Ecoles", "25-44 y.o.", 25353],
+        ["Hautes Ecoles", "45-64 y.o.", 8879],
+        ["Hautes Ecoles", "more than 64 y.o.", 2671],
+        ["Professionnelle Supérieure", "15-24 y.o.", 387],
+        ["Professionnelle Supérieure", "25-44 y.o.", 3846],
+        ["Professionnelle Supérieure", "45-64 y.o.", 3465],
+        ["Professionnelle Supérieure", "more than 64 y.o.", 2137],
+        ["Formation Générale", "15-24 y.o.", 3490],
+        ["Formation Générale", "25-44 y.o.", 4539],
+        ["Formation Générale", "45-64 y.o.", 3077],
+        ["Formation Générale", "more than 64 y.o.", 1912],
+        ["Formation Professionnelle", "15-24 y.o.", 1869],
+        ["Formation Professionnelle", "25-44 y.o.", 7062],
+        ["Formation Professionnelle", "45-64 y.o.", 6522],
+        ["Formation Professionnelle", "more than 64 y.o.", 5400],
+        ["Sans formation postobligatoire", "under 15", 20249],
+        ["Sans formation postobligatoire", "15-24 y.o.", 7410],
+        ["Sans formation postobligatoire", "25-44 y.o.", 8354],
+        ["Sans formation postobligatoire", "45-64 y.o.", 9726],
+        ["Sans formation postobligatoire", "more than 64 y.o.", 7239],
+        ["Unknown", "15-24 y.o.", 3531],
+        ["Unknown", "25-44 y.o.", 3320],
+        ["Unknown", "45-64 y.o.", 1034],
+        ["Unknown", "more than 64 y.o.", 1385],
+        ["under 15", "Overall Population", 20249],
+        ["15-24 y.o.", "Overall Population", 18618],
+        ["25-44 y.o.", "Overall Population", 52475],
+        ["45-64 y.o.", "Overall Population", 32703],
+        ["more than 64 y.o.", "Overall Population", 20745],
+        ["Overall Population", "Total Waste", 69634],
+        ["Total Waste", "Incinerable", 35054],
+        ["Total Waste", "Paper", 15202],
+        ["Total Waste", "Glass", 7590],
+        ["Total Waste", "Iron", 2264],
+        ["Total Waste", "Vegetabe", 9523]
+    ],
+    "2018": [
+        ["Hautes Ecoles", "15-24 y.o.", 2029],
+        ["Hautes Ecoles", "25-44 y.o.", 26508],
+        ["Hautes Ecoles", "45-64 y.o.", 9268],
+        ["Hautes Ecoles", "more than 64 y.o.", 2807],
+        ["Professionnelle Supérieure", "15-24 y.o.", 180],
+        ["Professionnelle Supérieure", "25-44 y.o.", 3681],
+        ["Professionnelle Supérieure", "45-64 y.o.", 3069],
+        ["Professionnelle Supérieure", "more than 64 y.o.", 1891],
+        ["Formation Générale", "15-24 y.o.", 4438],
+        ["Formation Générale", "25-44 y.o.", 4491],
+        ["Formation Générale", "45-64 y.o.", 3090],
+        ["Formation Générale", "more than 64 y.o.", 1769],
+        ["Formation Professionnelle", "15-24 y.o.", 1946],
+        ["Formation Professionnelle", "25-44 y.o.", 6580],
+        ["Formation Professionnelle", "45-64 y.o.", 7059],
+        ["Formation Professionnelle", "more than 64 y.o.", 5898],
+        ["Sans formation postobligatoire", "under 15", 20458],
+        ["Sans formation postobligatoire", "15-24 y.o.", 6457],
+        ["Sans formation postobligatoire", "25-44 y.o.", 7913],
+        ["Sans formation postobligatoire", "45-64 y.o.", 9463],
+        ["Sans formation postobligatoire", "more than 64 y.o.", 6973],
+        ["Unknown", "15-24 y.o.", 3825],
+        ["Unknown", "25-44 y.o.", 3297],
+        ["Unknown", "45-64 y.o.", 1034],
+        ["Unknown", "more than 64 y.o.", 1363],
+        ["under 15", "Overall Population", 20458],
+        ["15-24 y.o.", "Overall Population", 18875],
+        ["25-44 y.o.", "Overall Population", 52470],
+        ["45-64 y.o.", "Overall Population", 32984],
+        ["more than 64 y.o.", "Overall Population", 20701],
+        ["Overall Population", "Total Waste", 69142],
+        ["Total Waste", "Incinerable", 34740],
+        ["Total Waste", "Paper", 14799],
+        ["Total Waste", "Glass", 7487],
+        ["Total Waste", "Iron", 2217],
+        ["Total Waste", "Vegetable", 9899]
+    ],
+    "2019": [
+        ["Hautes Ecoles", "15-24 y.o.", 1788],
+        ["Hautes Ecoles", "25-44 y.o.", 26591],
+        ["Hautes Ecoles", "45-64 y.o.", 8707],
+        ["Hautes Ecoles", "more than 64 y.o.", 3105],
+        ["Professionnelle Supérieure", "15-24 y.o.", 315],
+        ["Professionnelle Supérieure", "25-44 y.o.", 3663],
+        ["Professionnelle Supérieure", "45-64 y.o.", 3585],
+        ["Professionnelle Supérieure", "more than 64 y.o.", 1634],
+        ["Formation Générale", "15-24 y.o.", 4099],
+        ["Formation Générale", "25-44 y.o.", 4673],
+        ["Formation Générale", "45-64 y.o.", 3372],
+        ["Formation Générale", "more than 64 y.o.", 2040],
+        ["Formation Professionnelle", "15-24 y.o.", 2420],
+        ["Formation Professionnelle", "25-44 y.o.", 6527],
+        ["Formation Professionnelle", "45-64 y.o.", 6760],
+        ["Formation Professionnelle", "more than 64 y.o.", 5635],
+        ["Sans formation postobligatoire", "under 15", 20433],
+        ["Sans formation postobligatoire", "15-24 y.o.", 6251],
+        ["Sans formation postobligatoire", "25-44 y.o.", 7580],
+        ["Sans formation postobligatoire", "45-64 y.o.", 9987],
+        ["Sans formation postobligatoire", "more than 64 y.o.", 6942],
+        ["Unknown", "15-24 y.o.", 4033],
+        ["Unknown", "25-44 y.o.", 3386],
+        ["Unknown", "45-64 y.o.", 1103],
+        ["Unknown", "more than 64 y.o.", 1403],
+        ["under 15", "Overall Population", 20433],
+        ["15-24 y.o.", "Overall Population", 18906],
+        ["25-44 y.o.", "Overall Population", 52419],
+        ["45-64 y.o.", "Overall Population", 33514],
+        ["more than 64 y.o.", "Overall Population", 20759],
+        ["Overall Population", "Total Waste", 67046],
+        ["Total Waste", "Incinerable", 33462],
+        ["Total Waste", "Paper", 13808],
+        ["Total Waste", "Glass", 7856],
+        ["Total Waste", "Iron", 2126],
+        ["Total Waste", "Vegetable", 9793] 
+    ],
+    "2020": [
+        ["Hautes Ecoles", "15-24 y.o.", 2033],
+        ["Hautes Ecoles", "25-44 y.o.", 26746],
+        ["Hautes Ecoles", "45-64 y.o.", 10255],
+        ["Hautes Ecoles", "more than 64 y.o.", 3540],
+        ["Professionnelle Supérieure", "15-24 y.o.", 201],
+        ["Professionnelle Supérieure", "25-44 y.o.", 2872],
+        ["Professionnelle Supérieure", "45-64 y.o.", 2483],
+        ["Professionnelle Supérieure", "more than 64 y.o.", 1779],
+        ["Formation Générale", "15-24 y.o.", 3986],
+        ["Formation Générale", "25-44 y.o.", 5065],
+        ["Formation Générale", "45-64 y.o.", 3319],
+        ["Formation Générale", "more than 64 y.o.", 1892],
+        ["Formation Professionnelle", "15-24 y.o.", 1729],
+        ["Formation Professionnelle", "25-44 y.o.", 7383],
+        ["Formation Professionnelle", "45-64 y.o.", 7152],
+        ["Formation Professionnelle", "more than 64 y.o.", 6242],
+        ["Sans formation postobligatoire", "under 15", 20379],
+        ["Sans formation postobligatoire", "15-24 y.o.", 6743],
+        ["Sans formation postobligatoire", "25-44 y.o.", 7286],
+        ["Sans formation postobligatoire", "45-64 y.o.", 9467],
+        ["Sans formation postobligatoire", "more than 64 y.o.", 5851],
+        ["Unknown", "15-24 y.o.", 3647],
+        ["Unknown", "25-44 y.o.", 2965],
+        ["Unknown", "45-64 y.o.", 996],
+        ["Unknown", "more than 64 y.o.", 1335],
+        ["under 15", "Overall Population", 20379],
+        ["15-24 y.o.", "Overall Population", 18353],
+        ["25-44 y.o.", "Overall Population", 52316],
+        ["45-64 y.o.", "Overall Population", 33673],
+        ["more than 64 y.o.", "Overall Population", 20638],
+        ["Overall Population", "Total Waste", 63147],
+        ["Total Waste", "Incinerable", 31049],
+        ["Total Waste", "Paper", 13153],
+        ["Total Waste", "Glass", 7211],
+        ["Total Waste", "Iron", 2153],
+        ["Total Waste", "Vegetable", 9582]
+    ],
+    "2021": [
+        ["Hautes Ecoles", "15-24 y.o.", 2143],
+        ["Hautes Ecoles", "25-44 y.o.", 27137],
+        ["Hautes Ecoles", "45-64 y.o.", 10533],
+        ["Hautes Ecoles", "more than 64 y.o.", 3362],
+        ["Professionnelle Supérieure", "15-24 y.o.", 71],
+        ["Professionnelle Supérieure", "25-44 y.o.", 2745],
+        ["Professionnelle Supérieure", "45-64 y.o.", 2403],
+        ["Professionnelle Supérieure", "more than 64 y.o.", 1660],
+        ["Formation Générale", "15-24 y.o.", 3628],
+        ["Formation Générale", "25-44 y.o.", 4381],
+        ["Formation Générale", "45-64 y.o.", 3409],
+        ["Formation Générale", "more than 64 y.o.", 2253],
+        ["Formation Professionnelle", "15-24 y.o.", 2112],
+        ["Formation Professionnelle", "25-44 y.o.", 7518],
+        ["Formation Professionnelle", "45-64 y.o.", 6947],
+        ["Formation Professionnelle", "more than 64 y.o.", 6285],
+        ["Sans formation postobligatoire", "under 15", 20502],
+        ["Sans formation postobligatoire", "15-24 y.o.", 7091],
+        ["Sans formation postobligatoire", "25-44 y.o.", 7336],
+        ["Sans formation postobligatoire", "45-64 y.o.", 9603],
+        ["Sans formation postobligatoire", "more than 64 y.o.", 5717],
+        ["Unknown", "15-24 y.o.", 4229],
+        ["Unknown", "25-44 y.o.", 3412],
+        ["Unknown", "45-64 y.o.", 1072],
+        ["Unknown", "more than 64 y.o.", 1360],
+        ["under 15", "Overall Population", 20502],
+        ["15-24 y.o.", "Overall Population", 19274],
+        ["25-44 y.o.", "Overall Population", 52529],
+        ["45-64 y.o.", "Overall Population", 33967],
+        ["more than 64 y.o.", "Overall Population", 20638],
+        ["Overall Population", "Total Waste", 63536],
+        ["Total Waste", "Incinerable", 31664],
+        ["Total Waste", "Paper", 13071],
+        ["Total Waste", "Glass", 7093],
+        ["Total Waste", "Iron", 2159],
+        ["Total Waste", "Vegetable", 9549]
+    ],
+    "2022": [
+        ["Hautes Ecoles", "15-24 y.o.", 2198],
+        ["Hautes Ecoles", "25-44 y.o.", 28174],
+        ["Hautes Ecoles", "45-64 y.o.", 10565],
+        ["Hautes Ecoles", "more than 64 y.o.", 3871],
+        ["Professionnelle Supérieure", "15-24 y.o.", 236],
+        ["Professionnelle Supérieure", "25-44 y.o.", 2463],
+        ["Professionnelle Supérieure", "45-64 y.o.", 2639],
+        ["Professionnelle Supérieure", "more than 64 y.o.", 1865],
+        ["Formation Générale", "15-24 y.o.", 3977],
+        ["Formation Générale", "25-44 y.o.", 4373],
+        ["Formation Générale", "45-64 y.o.", 3293],
+        ["Formation Générale", "more than 64 y.o.", 2019],
+        ["Formation Professionnelle", "15-24 y.o.", 2313],
+        ["Formation Professionnelle", "25-44 y.o.", 8016],
+        ["Formation Professionnelle", "45-64 y.o.", 7390],
+        ["Formation Professionnelle", "more than 64 y.o.", 5956],
+        ["Sans formation postobligatoire", "under 15", 20543],
+        ["Sans formation postobligatoire", "15-24 y.o.", 6557],
+        ["Sans formation postobligatoire", "25-44 y.o.", 6416],
+        ["Sans formation postobligatoire", "45-64 y.o.", 9473],
+        ["Sans formation postobligatoire", "more than 64 y.o.", 5544],
+        ["Unknown", "15-24 y.o.", 4459],
+        ["Unknown", "25-44 y.o.", 3788],
+        ["Unknown", "45-64 y.o.", 1238],
+        ["Unknown", "more than 64 y.o.", 1442],
+        ["under 15", "Overall Population", 20543],
+        ["15-24 y.o.", "Overall Population", 19741],
+        ["25-44 y.o.", "Overall Population", 53230],
+        ["45-64 y.o.", "Overall Population", 34599],
+        ["more than 64 y.o.", "Overall Population", 20697],
+        ["Overall Population", "Total Waste", 62249],
+        ["Total Waste", "Incinerable", 31365],
+        ["Total Waste", "Paper", 12500],
+        ["Total Waste", "Glass", 7096],
+        ["Total Waste", "Iron", 1947],
+        ["Total Waste", "Vegetable", 9341]
+    ]
+};

@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lausanne Sankey Chart - Correlation between educational level and recycling rate</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Google Charts -->
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400&display=swap" rel="stylesheet">
+    <!-- local java -->
+    <script type="text/javascript" src="script.js">
+       
+    </script>
+
+</head>
+<body>
+
+    <div id="wrapper">
+        <h1>Lausanne Sankey</h1>
+        <h2>This website provides an interactive data visualization that explores the correlation between educational level and recycling rates in Lausanne. Using a Sankey diagram, we illustrate how different education levels influence waste generation and recycling efficiency over time.</h2>
+        <div id="videoOverlay"></div>  <!-- 黑色蒙版 -->
+        <video autoplay muted loop id="bgVideo">
+            <source src="video.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>   
+
+<div class="introduction">
+    <div id="videoContainer">
+        <video autoplay loop muted playsinline class="intro-video">
+            <source src="data.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <video autoplay loop muted playsinline class="intro-video">
+            <source src="sankey.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+    <div class="intro-text">
+        <h1>Introduction</h1>
+        <h2>How does the level of education in a city correlate with waste production?</h2>
+        <p>This analysis examines the correlation between education levels and annual waste production across different cities. We use data from 2017 to 2022 on education, categorized by age groups and levels of attainment, ranging from no post-compulsory diploma to university degrees or higher qualifications. Additionally, we analyze waste production data, segmented by year and categorized into the "Big 5" waste types. By comparing these datasets, we aim to identify potential patterns and relationships, offering a data-driven perspective for further exploration.</p>
+    </div>
+</div>
+
+<!-- 📌 Sankey 图表 -->
+<div id="chart-section" class="chart-section">
+    <!-- 📌 滑动条放置在 Sankey 图表的右上角 -->
+    <div id="controls">
+        <div id="recyclingRate">49.6589%</div>
+        <p>Recycling efficiency</p>
+        <label for="yearRange">Year:</label>
+        <input type="range" id="yearRange" min="2017" max="2022" step="1" value="2017">
+        <span id="yearLabel">2017</span>
+        <div id="circleContainer">
+            <div id="circle1"></div>
+            <div id="circle2"></div>
+            <div id="circle3"></div>
+            <div id="circle4"></div>
+            <div id="circle5"></div>
+            <div id="circle6"></div>
+        </div>
+        <p>Less efficiency --- More efficiency</p>
+        
+
+            <!-- 📌 添加数据解释框 -->
+            <div id="trendAnalysis">
+                <h4>Trend Analysis</h4>
+                <p id="trendText">Loading data trends...</p>
+            </div>
+        
+            <div id="yearlyData">
+                <h4>Educational Data Breakdown</h4>
+                <p id="yearlyDataContent">Loading educational data...</p>
+            </div>
+
+    <div id="filterSection">
+        <label for="educationFilter">Filter by Education Level:</label>
+        <select id="educationFilter">
+            <option value="all">All Levels</option>
+            <option value="Hautes Ecoles">Hautes Ecoles</option>
+            <option value="Professionnelle Supérieure">Professionnelle Supérieure</option>
+            <option value="Formation Générale">Formation Générale</option>
+            <option value="Formation Professionnelle">Formation Professionnelle</option>
+            <option value="Sans formation postobligatoire">No Further Education</option>
+            <option value="Unknown">Unknown</option>
+        </select>
+        <label for="wasteFilter">Filter by Waste Type:</label>
+<select id="wasteFilter">
+    <option value="all">All Types</option>
+    <option value="Total Waste">Total Waste</option>
+    <option value="Incinerable">Incinerable</option>
+    <option value="Paper">Paper</option>
+    <option value="Glass">Glass</option>
+    <option value="Iron">Iron</option>
+    <option value="Vegetable">Vegetable</option>
+</select>
+    </div>
+    <button id="downloadButton" class="download-btn">Download Data</button>
+    <!-- <p>BackgroundColor of this section is based on the recycling efficiency.</p> -->
+    </div>
+    
+    <!-- 📌 Sankey Chart -->
+    <div id="sankeyChart" style="width: 100%; height: 600px;"></div>
+</div>
+
+
+<div id="citation">
+    <h2>Data Sources & Project Credits</h2>
+    
+    <div class="citation-section">
+        <h3>Population Data & Education Data</h3>
+        <ul>
+        <li>15.04 Relevé structurel_données 2022<li>
+        <li>Etat et structure 2024<li>
+        <li>Source: City of Lausanne, Statistical Office.</li>
+        <a href="https://www.lausanne.ch/officiel/statistique/quartiers/tableaux-donnees.html" target="_blank">
+            Official Lausanne Statistics
+        </a>
+        </ul>
+    </div>
+
+    <div class="citation-section">
+        <h3>Waste Data</h3>
+        <ul>
+        <li>Source: Bluecity project (2022 - 2026).</li>
+        </ul>
+    </div>
+
+    <div class="citation-section">
+        <h3>Project Team</h3>
+        <ul>
+            <li><strong>Author:</strong> Zheng Chen, Marco De Martino, Amaël Cacciola, Lolita Watson</li>
+            <li><strong>Course:</strong> Data Driven Design II</li>
+            <li><strong>Year:</strong> 2024-2025</li>
+            <li><strong>Faculty:</strong> Ginevra Terenghi (Teacher)</li>
+            <li><strong>Faculty:</strong> Antonella Autuori (Teacher)</li>
+            <li><strong>Assistant:</strong> Luca Draisci (Teaching Assistant)</li>
+        </ul>
+    </div>
+</div>
+
+
+</body>
+</html>
