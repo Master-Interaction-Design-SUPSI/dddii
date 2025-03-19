@@ -144,9 +144,18 @@ a:hover {
     font-weight: normal;
 }
 
+.project .authors {
+    font-size: 0.7rem;
+    line-height: 1.4;
+    font-style: normal;
+    margin-top: 8px;
+    opacity: 0.8;
+}
+
 .project-link:hover .title,
 .project-link:hover .subtitle,
-.project-link:hover .description {
+.project-link:hover .description,
+.project-link:hover .authors {
     color: var(--primary-color);
     opacity: 1;
 }
